@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rohan Dodrajka | Backend Engineer</title>
+  <meta name="description" content="Rohan Dodrajka — Backend Engineer focused on distributed systems, reliability, and enterprise SaaS at scale." />
+  <style>
+    :root{--bg:#050816;--bg2:#07111f;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12);--text:#ecf2ff;--muted:#a9b4cc;--muted2:#7f8aa6;--good:#34d399;--shadow:0 24px 80px rgba(0,0,0,.35);--radius:28px;--radius-sm:20px;--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans";color:var(--text);background:radial-gradient(900px 500px at 15% 8%, rgba(125,211,252,.17), transparent 60%),radial-gradient(900px 500px at 85% 0%, rgba(167,139,250,.18), transparent 55%),linear-gradient(180deg, #02040b 0%, var(--bg) 35%, #040814 100%);min-height:100vh}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:32px 22px 56px}
+    .nav{position:sticky;top:14px;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border:1px solid var(--line);background:rgba(4,8,20,.65);backdrop-filter:blur(14px);border-radius:999px;box-shadow:var(--shadow)}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}.avatar{width:38px;height:38px;border-radius:14px;flex:none;display:grid;place-items:center;background:linear-gradient(135deg, rgba(125,211,252,.3), rgba(167,139,250,.28));border:1px solid rgba(255,255,255,.14);font-weight:700;letter-spacing:.04em}
+    .brand h1{margin:0;font-size:15px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.brand p{margin:2px 0 0;font-size:12px;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .navlinks{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}.navlinks a{text-decoration:none;color:var(--muted);font-size:13px;padding:8px 12px;border-radius:999px;transition:.2s ease}.navlinks a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;padding:40px 0 22px;align-items:stretch}
+    .panel{border:1px solid var(--line);background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-main{padding:34px}.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border-radius:999px;border:1px solid rgba(125,211,252,.24);background:rgba(125,211,252,.08);color:#d7f3ff;font-size:13px;font-weight:600}.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 6px rgba(52,211,153,.12)}
+    .title{margin:18px 0 14px;font-size:clamp(40px,6vw,72px);line-height:.95;letter-spacing:-.05em}.subtitle{margin:0;max-width:760px;font-size:clamp(16px,2vw,20px);line-height:1.75;color:var(--muted)}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.03);color:#d8e1f7;font-size:13px}.pill svg{opacity:.9}
+    .hero-side{padding:22px}.side-card{height:100%;display:flex;flex-direction:column;justify-content:space-between;gap:16px;padding:20px;border-radius:24px;background:radial-gradient(500px 220px at 20% 0%, rgba(125,211,252,.16), transparent 55%),linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08)}
+    .side-card h2{margin:0;font-size:18px}.side-card p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}.buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .btn{text-decoration:none;display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:16px;font-weight:600;font-size:14px;border:1px solid transparent;transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn-primary{color:#07111f;background:linear-gradient(135deg, #d7f3ff, #b7c7ff);box-shadow:0 16px 30px rgba(125,211,252,.14)}.btn-secondary{color:var(--text);border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.03)}
+    .section{margin-top:28px}.section h3{margin:0 0 14px;font-size:20px;letter-spacing:-.02em}.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:16px}.section-head p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.stat{padding:18px;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09)}.stat .num{font-size:26px;font-weight:800;letter-spacing:-.04em;margin:0 0 6px;background:linear-gradient(135deg, #fff, #b8d7ff);-webkit-background-clip:text;background-clip:text;color:transparent}.stat .label{font-size:13px;color:var(--muted)}
+    .grid-2{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}.card{padding:22px;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04)}.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:10px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);font-size:13px;color:#dce6fb}
+    .experience-list{display:grid;gap:14px}.experience{padding:22px;border-radius:24px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03))}.exp-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:14px}.exp-left{display:flex;gap:14px;align-items:flex-start;min-width:0}.logo{width:46px;height:46px;flex:none;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg, rgba(125,211,252,.16), rgba(167,139,250,.18));border:1px solid rgba(255,255,255,.11);color:#eef4ff;font-weight:800;letter-spacing:.03em;font-size:14px}.exp-role{margin:0;font-size:18px;font-weight:700;letter-spacing:-.02em}.exp-company{margin:4px 0 0;color:var(--muted);font-size:14px}.exp-period{color:var(--muted2);font-size:13px;white-space:nowrap;padding-top:4px}.bullets{margin:0;padding:0 0 0 18px;display:grid;gap:10px;color:#dbe3f7;line-height:1.7;font-size:14px}.bullets li{padding-left:2px}
+    .edu{padding:22px;border-radius:24px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04)}.edu h4{margin:0 0 6px;font-size:17px}.edu p{margin:0;color:var(--muted);line-height:1.7;font-size:14px}.footer{margin-top:24px;padding:22px 0 0;color:var(--muted2);font-size:13px;text-align:center}
+    @media (max-width: 920px){.hero,.grid-2,.stats{grid-template-columns:1fr}.nav{border-radius:24px;align-items:flex-start;flex-direction:column}.navlinks{justify-content:flex-start}.hero-main{padding:26px}.hero-side{padding:0}.exp-top{flex-direction:column}.exp-period{white-space:normal}}
+    @media (max-width: 560px){.wrap{padding:18px 14px 42px}.hero-main,.experience,.edu,.card{padding:18px}.title{font-size:clamp(34px,12vw,52px)}.buttons{flex-direction:column}.btn{justify-content:center}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="avatar">RD</div>
+        <div>
+          <h1>Rohan Dodrajka</h1>
+          <p>Senior Backend Engineer</p>
+        </div>
+      </div>
+      <nav class="navlinks">
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="panel hero-main">
+        <span class="eyebrow"><i></i> </span>
+        <h2 class="title">Building resilient systems at enterprise scale.</h2>
+        <p class="subtitle">I design and ship backend platforms for distributed, data-heavy products. My focus is reliability, performance, automation, and systems that stay calm under production load.</p>
+        <div class="meta">
+          <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>Bengaluru, India</span>
+          <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Z" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Oracle Fusion Data Intelligence</span>
+          <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17h10M8 17V7a4 4 0 0 1 8 0v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 21a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="1.8"/></svg></span>
+        </div>
+      </div>
+
+      <aside class="panel hero-side">
+        <div class="side-card">
+          <div>
+            <h2>Quick profile</h2>
+            <p>Senior backend engineer with strong experience in Java, Spring Boot, microservices, reliability engineering, and analytics platforms.</p>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-primary" href="mailto:rohandodrajka01@gmail.com">Email me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/rohandodrajka/" target="_blank" rel="noreferrer">Open LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    
+
+    <section class="section grid-2" id="skills">
+      <div class="card">
+        <div class="section-head"><div><h3>Core stack</h3><p>Tools and technologies I use to build and operate distributed systems.</p></div></div>
+        <div class="skills">
+          <span class="skill">Java</span><span class="skill">Spring Boot</span><span class="skill">Microservices</span><span class="skill">Kafka</span><span class="skill">Redis</span><span class="skill">HBase</span><span class="skill">SQL</span><span class="skill">AWS</span><span class="skill">Kubernetes</span><span class="skill">Grafana</span><span class="skill">Prometheus</span><span class="skill">Python</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="section-head"><div><h3>Strengths</h3><p>What I bring to engineering teams.</p></div></div>
+        <div class="timeline">
+          <div class="edu"><h4>Distributed systems</h4><p>Designing high-throughput backend services that stay reliable under production load.</p></div>
+          <div class="edu"><h4>Reliability engineering</h4><p>Reducing manual toil with automation, incident reduction, and safer operational workflows.</p></div>
+          <div class="edu"><h4>Performance tuning</h4><p>Improving latency, startup time, memory footprint, and data movement efficiency.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-head"><div><h3>Experience</h3><p>Text-only cards with no images next to company labels.</p></div></div>
+      <div class="experience-list">
+        <article class="experience">
+          <div class="exp-top"><div class="exp-left"><div class="logo">OR</div><div><h4 class="exp-role">Senior Member of Technical Staff</h4><p class="exp-company">Oracle — Fusion Data Intelligence</p></div></div><div class="exp-period">Sep 2023 – Present</div></div>
+          <ul class="bullets"><li>Architected a fault-tolerant distributed scheduler processing 50M+ jobs per day across enterprise tenants.</li><li>Delivered zero-downtime infrastructure by automating SSL certificate rotation with ACME and a sidecar-based approach, eliminating 20+ hours of manual SRE work per month while sustaining 99.99% uptime.</li><li>Led a migration from Spring Boot to Micronaut, reducing application startup time by 16% and memory usage by 31%.</li><li>Orchestrated migration of 1M+ analytical artifacts, including KPIs and dashboards, across 100+ global tenants with zero data loss and no customer downtime.</li><li>Strengthened platform security by moving enforcement from the logical layer to the physical database layer within the Fusion Analytics Warehouse RPD.</li></ul>
+        </article>
+        <article class="experience">
+          <div class="exp-top"><div class="exp-left"><div class="logo">OR</div><div><h4 class="exp-role">Member of Technical Staff</h4><p class="exp-company">Oracle</p></div></div><div class="exp-period">Jul 2021 – Aug 2023</div></div>
+          <ul class="bullets"><li>Optimized distributed communication between microservices, improving throughput and query performance for large data workloads.</li><li>Reduced MTTR from roughly 2 minutes to under 15 seconds by automating database connection resets after security rotations.</li><li>Eliminated about 150 PagerDuty alerts per month by improving resilience and recovery workflows for production disconnects.</li><li>Built a self-service Metric Configuration module adopted by 78% of enterprise tenants, reducing setup from days to minutes.</li><li>Developed automated workflows for analytical template workbooks, improving query response times for customer datasets.</li></ul>
+        </article>
+        <article class="experience">
+          <div class="exp-top"><div class="exp-left"><div class="logo">G</div><div><h4 class="exp-role">Computer Vision Researcher</h4><p class="exp-company">Gusto Labs — Hong Kong</p></div></div><div class="exp-period">Mar 2021 – Jun 2021</div></div>
+          <ul class="bullets"><li>Developed an image tracking SDK for augmented reality applications with real-time performance constraints.</li><li>Worked with C++, OpenCV, and Python to implement detection and tracking pipelines for mobile AR use cases.</li><li>Focused on robustness and accuracy under varying lighting and motion conditions.</li></ul>
+        </article>
+        <article class="experience">
+          <div class="exp-top"><div class="exp-left"><div class="logo">SB</div><div><h4 class="exp-role">Research Intern</h4><p class="exp-company">Singapore Bioimaging Consortium &amp; Johns Hopkins University</p></div></div><div class="exp-period">May 2019 – Jul 2019</div></div>
+          <ul class="bullets"><li>Built an end-to-end machine learning pipeline processing 10,000+ CT scan slices for stroke classification and localization.</li><li>Achieved 93% classification accuracy using histogram-based feature extraction and an SVM with RBF kernel.</li><li>Implemented a 3D U-Net with an attention-based transformer, achieving a 0.82 Dice coefficient for lesion localization.</li><li>Designed preprocessing steps that improved signal quality and downstream model performance.</li></ul>
+        </article>
+        <article class="experience">
+          <div class="exp-top"><div class="exp-left"><div class="logo">S</div><div><h4 class="exp-role">Developer Intern</h4><p class="exp-company">Samsung R&amp;D Institute India</p></div></div><div class="exp-period">May 2020 – Jul 2020</div></div>
+          <ul class="bullets"><li>Worked on automated detection of glaucoma from retinal fundus images based on Cup-to-Disc ratio.</li><li>Used image enhancement techniques and region growing segmentation to isolate the optic disc and cup.</li><li>Achieved F1 scores of 0.88 for disc segmentation and 0.73 for cup segmentation.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="section-head"><div><h3>Education</h3><p>Foundational training from IIT Kharagpur.</p></div></div>
+      <div class="edu"><h4>Indian Institute of Technology, Kharagpur</h4><p>B.Tech + M.Tech in Electronics and Electrical Communications Engineering</p><p>2016 – 2021 • CGPA 8.3/10</p></div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="card">
+        <div class="section-head"><div><h3>Contact</h3><p>Use this link on your resume, applications, and LinkedIn profile.</p></div></div>
+        <div class="buttons"><a class="btn btn-primary" href="mailto:rohandodrajka01@gmail.com">rohandodrajka01@gmail.com</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/rohandodrajka/" target="_blank" rel="noreferrer">linkedin.com/in/rohandodrajka</a></div>
+      </div>
+    </section>
+
+    <div class="footer">Rohan Dodrajka — Backend Engineer</div>
+  </div>
+</body>
+</html>
