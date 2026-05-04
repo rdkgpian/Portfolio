@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Rohan Dodrajka - Senior Backend Engineer portfolio" />
+  <title>Rohan Dodrajka | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg2: #0f172a;
+      --card: rgba(15, 23, 42, 0.78);
+      --border: rgba(148, 163, 184, 0.18);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #7c3aed;
+      --accent2: #22c55e;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124,58,237,.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(34,197,94,.12), transparent 24%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px 72px; }
+    .hero, .section, .footer {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+    .hero { padding: 36px; display: grid; grid-template-columns: 1.45fr .95fr; gap: 28px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; gap: 10px; align-items: center; padding: 10px 14px;
+      border: 1px solid rgba(34,197,94,.25); border-radius: 999px;
+      color: #bbf7d0; background: rgba(34,197,94,.08); font-size: 14px; font-weight: 600;
+    }
+    h1 { font-size: clamp(42px, 6vw, 72px); line-height: .95; margin: 18px 0 14px; letter-spacing: -0.05em; }
+    .subtitle { font-size: 18px; line-height: 1.75; color: var(--muted); max-width: 62ch; margin: 0; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px;
+      border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.03);
+      color: #dbeafe; font-size: 14px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 13px 18px; border-radius: 16px; border: 1px solid var(--border);
+      background: rgba(255,255,255,.04); transition: transform .2s ease, background .2s ease;
+      font-weight: 600;
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), #2563eb); border-color: transparent; }
+    .btn:hover { transform: translateY(-1px); }
+    .hero-card {
+      padding: 24px; border-radius: 24px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+    .stat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .stat { padding: 18px; border-radius: 20px; border: 1px solid var(--border); background: rgba(15,23,42,.64); }
+    .stat .num { font-size: 30px; font-weight: 800; letter-spacing: -0.04em; }
+    .stat .lbl { color: var(--muted); font-size: 13px; margin-top: 4px; line-height: 1.4; }
+    .grid { display: grid; gap: 18px; margin-top: 22px; }
+    .section { padding: 28px; margin-top: 24px; }
+    .section h2 { margin: 0 0 18px; font-size: 28px; letter-spacing: -0.04em; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid var(--border); font-size: 14px; }
+    .timeline { display: grid; gap: 16px; }
+    .job {
+      padding: 20px; border-radius: 22px; border: 1px solid var(--border); background: rgba(255,255,255,.03);
+    }
+    .job-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .job h3 { margin: 0; font-size: 20px; }
+    .company { color: #cbd5e1; font-weight: 600; margin-top: 4px; }
+    .period { color: var(--muted); font-size: 14px; }
+    .job ul { margin: 14px 0 0 18px; color: #dbeafe; line-height: 1.7; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card { padding: 20px; border-radius: 22px; border: 1px solid var(--border); background: rgba(255,255,255,.03); }
+    .muted { color: var(--muted); }
+    .footer { padding: 24px 28px; margin-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; color: var(--muted); }
+    .small { font-size: 14px; line-height: 1.6; }
+    @media (max-width: 900px) {
+      .hero, .two-col { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .wrap { padding: 18px 14px 44px; }
+      .hero { padding: 24px; }
+      .section { padding: 22px; }
+    }
+    @media (max-width: 560px) {
+      h1 { font-size: 38px; }
+      .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Senior Backend Engineer · Oracle · IIT Kharagpur</div>
+        <h1>Rohan Dodrajka</h1>
+        <p class="subtitle">
+          I build scalable, fault-tolerant distributed systems for enterprise SaaS platforms, with a focus on reliability,
+          performance, and zero-downtime infrastructure.
+        </p>
+        <div class="meta">
+          <span class="pill">Bengaluru, India</span>
+          <span class="pill">Hong Kong experience</span>
+          <span class="pill">Java · Spring Boot · Microservices</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="mailto:rohandodrajka01@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/rohandodrajka/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="#experience">View experience</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="stat-grid">
+          <div class="stat"><div class="num">50M+</div><div class="lbl">jobs/day through Fusion Scheduler</div></div>
+          <div class="stat"><div class="num">99.99%</div><div class="lbl">platform uptime supported by automation</div></div>
+          <div class="stat"><div class="num">1M+</div><div class="lbl">analytical artifacts migrated safely</div></div>
+          <div class="stat"><div class="num">78%</div><div class="lbl">tenant adoption of self-service metrics</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About</h2>
+      <p class="small muted">
+        Senior Member of Technical Staff at Oracle working on Fusion Data Intelligence. Previously built computer vision
+        tooling in Hong Kong and research systems in Singapore, with a strong foundation in system design, distributed
+        architecture, and applied machine learning. Based on your resume and LinkedIn profile. fileciteturn0file0turn3file0
+      </p>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">Java</span><span class="skill">Spring Boot</span><span class="skill">Microservices</span>
+        <span class="skill">Kafka</span><span class="skill">Redis</span><span class="skill">HBase</span>
+        <span class="skill">AWS</span><span class="skill">Kubernetes</span><span class="skill">Grafana</span>
+        <span class="skill">Prometheus</span><span class="skill">SQL</span><span class="skill">Python</span>
+        <span class="skill">C++</span><span class="skill">OpenCV</span>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <article class="job">
+          <div class="job-top">
+            <div>
+              <h3>Senior Member of Technical Staff</h3>
+              <div class="company">Oracle — Fusion Data Intelligence</div>
+            </div>
+            <div class="period">Sep 2023 – Present</div>
+          </div>
+          <ul>
+            <li>Architected a fault-tolerant scheduler consistently processing 50M+ jobs per day. fileciteturn0file0</li>
+            <li>Moved data security enforcement from the logical layer to the physical database layer.</li>
+            <li>Automated SSL certificate rotations, eliminating 20+ hours of manual SRE work per month and keeping uptime at 99.99%. fileciteturn0file0</li>
+            <li>Delivered a Micronaut migration proof-of-concept, reducing startup time by 16% and memory usage by 31%. fileciteturn0file0</li>
+            <li>Migrated 1,000,000+ analytical artifacts across 100+ enterprise tenants with zero downtime. fileciteturn0file0</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-top">
+            <div>
+              <h3>Member of Technical Staff</h3>
+              <div class="company">Oracle</div>
+            </div>
+            <div class="period">Jul 2021 – Aug 2023</div>
+          </div>
+          <ul>
+            <li>Improved distributed microservice communication and query performance.</li>
+            <li>Reduced MTTR from 2 minutes to under 15 seconds by automating database connection resets.</li>
+            <li>Eliminated around 150 manual PagerDuty alerts per month for SRE teams. fileciteturn0file0</li>
+            <li>Built self-service analytics features adopted by 78% of enterprise tenants. fileciteturn0file0</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-top">
+            <div>
+              <h3>Computer Vision Researcher</h3>
+              <div class="company">Gusto Labs — Hong Kong</div>
+            </div>
+            <div class="period">Mar 2021 – Jun 2021</div>
+          </div>
+          <ul>
+            <li>Worked on an image-tracking SDK for augmented reality applications. fileciteturn3file0</li>
+            <li>Used C++, OpenCV, and Python in Hong Kong. fileciteturn3file0</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-top">
+            <div>
+              <h3>Research Intern</h3>
+              <div class="company">Singapore Bioimaging Consortium &amp; Johns Hopkins University</div>
+            </div>
+            <div class="period">May 2019 – Jul 2019</div>
+          </div>
+          <ul>
+            <li>Built a stroke-classification pipeline for ischemic and hemorrhagic brain scans. fileciteturn0file0turn3file0</li>
+            <li>Achieved 93% accuracy with histogram features and SVM; also implemented a 3D U-Net with attention and 0.82 Dice score. fileciteturn0file0</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <h2>Education</h2>
+      <div class="two-col">
+        <div class="card">
+          <strong>Indian Institute of Technology, Kharagpur</strong>
+          <p class="muted small">B.Tech + M.Tech in Electronics and Electrical Communications Engineering<br/>Jul 2016 – Apr 2021<br/>CGPA: 8.3/10</p>
+        </div>
+        <div class="card">
+          <strong>Highlights</strong>
+          <p class="muted small">Analytics Rockstar Award · Sequence Models certification · English professional working proficiency · Hindi native/bilingual. fileciteturn3file0</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="two-col">
+        <div class="card">
+          <strong>Email</strong>
+          <p class="muted small">rohandodrajka01@gmail.com</p>
+        </div>
+        <div class="card">
+          <strong>LinkedIn</strong>
+          <p class="muted small">www.linkedin.com/in/rohandodrajka</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>Built for a public portfolio URL you can paste into applications.</div>
+      <div>Last updated from your resume and LinkedIn PDF. fileciteturn0file0turn3file0</div>
+    </footer>
+  </main>
+</body>
+</html>
